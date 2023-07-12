@@ -5,10 +5,10 @@
 
 /*  Remove mascot class from element "main" if its width is <= mascotMinWidth */
 function controlMascot(mascot, mascotMinWidth) {
-    $(window).resize(function(event) {
-        if ( $(window).width() <= mascotMinWidth && $("main").hasClass("mascot") ) {
+    $('window').resize(function(event) {
+        if ( $('window').width() <= mascotMinWidth && $("main").hasClass("mascot") ) {
             removeMascot();
-        } else if( $(window).width() > mascotMinWidth && ! $("main").hasClass("mascot") ) {
+        } else if( $('window').width() > mascotMinWidth && ! $("main").hasClass("mascot") ) {
             setMascot(mascot);
         }
     });
@@ -28,7 +28,7 @@ function removeMascot() {
 
 $(document).ready(function(event) {
     var mascotEnable    = true;
-    var mascotPath      = "./images/mascots/"
+    var mascotPath      = "images/mascots/"
     var mascotList = ['flan1.png', 'flan2.png', 'flan3.png', 'flan4.png', ];
 
     var mascot          = mascotPath + mascotList[Math.floor(Math.random() * mascotList.length)];
@@ -44,3 +44,8 @@ function vgsearch() {  //Moot u cheeky little kunt why do I have to make a funct
     url += $('#vgresult').val();
     window.location = url;
 };
+// Toggle hamburger menu on click
+let hamburger = document.querySelector('.hamburger-menu');
+hamburger.onclick = function() {
+  hamburger.classList.toggle('active');
+}
